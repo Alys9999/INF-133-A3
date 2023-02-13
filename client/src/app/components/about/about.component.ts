@@ -16,7 +16,17 @@ export class AboutComponent implements OnInit {
   constructor(private service: SpotifyService) { }
 
   ngOnInit() {
-    console.log(this.service.aboutMe())
+    let me =this.service.aboutMe();
+    document.getElementsByTagName("button")[0].addEventListener("click", function(){
+      me.then((data)=>{
+      document.getElementsByTagName("h3")[0].innerText = "Logged in user: "+data.name;
+      document.getElementById("mePic").setAttribute("src", data.imageURL);
+      document.getElementById("openProfile").setAttribute("href", data.spotifyProfile)
+      //console.log(document.getElementsByTagName("a")[0])
+      })
+      .catch((error: any) => console.log(error));
+    })
+    
   }
 
 
