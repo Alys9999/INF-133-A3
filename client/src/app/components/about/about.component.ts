@@ -17,7 +17,6 @@ export class AboutComponent implements OnInit {
   
   ngOnInit() {
     this.name = "???";
-    this.getAboutMe();
   }
 
 
@@ -25,13 +24,10 @@ export class AboutComponent implements OnInit {
   In that function, update the name, profile_pic, and profile_link fields */
   getAboutMe() {
     let aboutMe = this.service.aboutMe();
-    let _self = this;
-    document.getElementsByTagName("button")[0].addEventListener("click", function() {
-      aboutMe.then((data) => {
-        _self.name = data.name;
-        _self.profile_pic = data.imageURL;
-        _self.profile_link = data.spotifyProfile;
+    aboutMe.then((data) => {
+        this.name = data.name;
+        this.profile_pic = data.imageURL;
+        this.profile_link = data.spotifyProfile;
       }).catch((error: any) => console.log(error));
-    });
   }
 }
