@@ -45,10 +45,7 @@ export class SpotifyService {
     //Depending on the category (artist, track, album), return an array of that type of data.
     //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
     let encoded_res=encodeURIComponent(resource);
-    console.log(resource)
-    console.log(encoded_res)
     return this.sendRequestToExpress('/search/'+category+'/'+encoded_res).then((data) => {
-      console.log(data);
       if(category=="artist"){
         return data['artists']['items'].map(item=>new ArtistData(item));
       }else if (category=="album"){
