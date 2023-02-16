@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ResourceData } from '../../data/resource-data';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-carousel',
