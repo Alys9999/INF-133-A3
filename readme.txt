@@ -1,4 +1,4 @@
---Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
+--Readme document for *Zhaoyang Lu, Nhat Anh Hoang Pham*, *zhaoyal5@uci.edu,  nhatap@uci.edu*, *30735594, 14456197*--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
